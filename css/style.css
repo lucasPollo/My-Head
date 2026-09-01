@@ -3,7 +3,8 @@ body {
     height: 100%
 }
 
-h1 {
+h1,
+footer {
     background-color: brown;
     color: #fff;
     padding: 10px;
