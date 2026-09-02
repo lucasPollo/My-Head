@@ -9,3 +9,19 @@ footer {
     color: #fff;
     padding: 10px;
 }
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.footer-logo {
+    width: 220px;
+    max-width: 80vw;
+    height: auto;
+    padding: 8px;
+    background-color: #fff;
+}
