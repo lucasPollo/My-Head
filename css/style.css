@@ -5,8 +5,8 @@ body {
 }
 
 body {
-    display: grid;
-    grid-template-rows: auto 1fr auto;
+    display: flex;
+    flex-direction: column;
     color: #eeece7;
     background:
         radial-gradient(circle at 50% 43%, #292d31 0, #181b1f 38%, #111315 78%);
@@ -44,8 +44,24 @@ h1::after {
     transform: translateX(-50%);
 }
 
+.site-kicker {
+    margin: 14px 0 0;
+    color: #aeb0ac;
+    font-size: .66rem;
+    font-weight: 600;
+    letter-spacing: .16em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.site-kicker span {
+    margin: 0 8px;
+    color: #c6402d;
+}
+
 .h-100 {
     position: relative;
+    flex: 1;
     height: auto !important;
     min-height: 510px;
     padding: 54px 24px;
@@ -84,6 +100,47 @@ h1::after {
     filter: contrast(1.05) saturate(.92);
 }
 
+.vehicle-details {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: min(760px, calc(100% - 48px));
+    margin: 0 auto 26px;
+    border-top: 1px solid rgba(255, 255, 255, .1);
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+}
+
+.vehicle-details div {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    gap: 10px;
+    justify-content: center;
+    min-height: 65px;
+    padding: 10px 18px;
+}
+
+.vehicle-details div + div {
+    border-left: 1px solid rgba(255, 255, 255, .1);
+}
+
+.vehicle-details strong {
+    color: #c6402d;
+    font-family: Impact, "Arial Narrow Bold", sans-serif;
+    font-size: 1.45rem;
+    font-weight: 400;
+    letter-spacing: .03em;
+}
+
+.vehicle-details span {
+    color: #b9bbb6;
+    font-size: .58rem;
+    font-weight: 600;
+    letter-spacing: .1em;
+    line-height: 1.35;
+    text-transform: uppercase;
+}
+
 footer {
     display: flex;
     align-items: center;
@@ -113,6 +170,10 @@ footer {
         padding: 24px 20px 18px;
     }
 
+    .site-kicker {
+        margin-top: 12px;
+    }
+
     .h-100 {
         min-height: 450px;
         padding: 46px 20px;
@@ -120,6 +181,15 @@ footer {
 
     .h-100::before {
         width: 86vw;
+    }
+
+    .vehicle-details {
+        width: calc(100% - 40px);
+    }
+
+    .vehicle-details div {
+        gap: 7px;
+        padding: 10px;
     }
 
     footer {
@@ -137,6 +207,20 @@ footer {
 
     .h-100 a {
         width: 72vw;
+    }
+
+    .vehicle-details div {
+        min-height: 58px;
+        padding: 7px 4px;
+    }
+
+    .vehicle-details strong {
+        font-size: 1.1rem;
+    }
+
+    .vehicle-details span {
+        font-size: .48rem;
+        letter-spacing: .06em;
     }
 
     #img {
