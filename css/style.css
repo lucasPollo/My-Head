@@ -1,4 +1,233 @@
 html,
 body {
-    height: 100%
+    min-height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    color: #eeece7;
+    background:
+        radial-gradient(circle at 50% 43%, #292d31 0, #181b1f 38%, #111315 78%);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1,
+footer {
+    width: 100%;
+}
+
+h1 {
+    position: relative;
+    margin: 0;
+    padding: 28px 30px 22px;
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+    color: #f3f0e8;
+    font-family: Impact, "Arial Narrow Bold", sans-serif;
+    font-size: clamp(2.2rem, 5vw, 4.2rem);
+    font-weight: 400;
+    letter-spacing: .035em;
+    line-height: .9;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+h1::after {
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 68px;
+    height: 3px;
+    background: #c6402d;
+    content: "";
+    transform: translateX(-50%);
+}
+
+.site-kicker {
+    margin: 14px 0 0;
+    color: #aeb0ac;
+    font-size: .66rem;
+    font-weight: 600;
+    letter-spacing: .16em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.site-kicker span {
+    margin: 0 8px;
+    color: #c6402d;
+}
+
+.h-100 {
+    position: relative;
+    flex: 1;
+    height: auto !important;
+    min-height: 510px;
+    padding: 54px 24px;
+    overflow: hidden;
+}
+
+.h-100::before {
+    position: absolute;
+    width: min(64vw, 630px);
+    aspect-ratio: 1;
+    border: 1px solid rgba(238, 236, 231, .12);
+    border-radius: 50%;
+    content: "";
+}
+
+.h-100 a {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    width: min(430px, 72vw);
+    aspect-ratio: 1;
+    place-items: center;
+    border-radius: 50%;
+    background: #c6402d;
+    box-shadow: 0 22px 55px rgba(0, 0, 0, .38);
+}
+
+#img {
+    display: block;
+    width: 84% !important;
+    max-width: none !important;
+    height: 84% !important;
+    border: 6px solid #eeece7;
+    border-radius: 50%;
+    object-fit: cover;
+    filter: contrast(1.05) saturate(.92);
+}
+
+.vehicle-details {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: min(760px, calc(100% - 48px));
+    margin: 0 auto 26px;
+    border-top: 1px solid rgba(255, 255, 255, .1);
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+}
+
+.vehicle-details div {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    gap: 10px;
+    justify-content: center;
+    min-height: 65px;
+    padding: 10px 18px;
+}
+
+.vehicle-details div + div {
+    border-left: 1px solid rgba(255, 255, 255, .1);
+}
+
+.vehicle-details strong {
+    color: #c6402d;
+    font-family: Impact, "Arial Narrow Bold", sans-serif;
+    font-size: 1.45rem;
+    font-weight: 400;
+    letter-spacing: .03em;
+}
+
+.vehicle-details span {
+    color: #b9bbb6;
+    font-size: .58rem;
+    font-weight: 600;
+    letter-spacing: .1em;
+    line-height: 1.35;
+    text-transform: uppercase;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 86px;
+    gap: 24px;
+    padding: 16px 30px;
+    border-top: 1px solid rgba(255, 255, 255, .1);
+    color: #aeb0ac;
+    background: rgba(0, 0, 0, .15);
+    font-size: .68rem;
+    font-weight: 600;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+}
+
+.footer-logo {
+    width: 112px;
+    max-width: 35vw;
+    height: auto;
+    opacity: .8;
+    filter: grayscale(1) brightness(2.1);
+}
+
+@media (max-width: 800px) {
+    h1 {
+        padding: 24px 20px 18px;
+    }
+
+    .site-kicker {
+        margin-top: 12px;
+    }
+
+    .h-100 {
+        min-height: 450px;
+        padding: 46px 20px;
+    }
+
+    .h-100::before {
+        width: 86vw;
+    }
+
+    .vehicle-details {
+        width: calc(100% - 40px);
+    }
+
+    .vehicle-details div {
+        gap: 7px;
+        padding: 10px;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 10px;
+        padding: 18px 20px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .h-100 {
+        min-height: 390px;
+    }
+
+    .h-100 a {
+        width: 72vw;
+    }
+
+    .vehicle-details div {
+        min-height: 58px;
+        padding: 7px 4px;
+    }
+
+    .vehicle-details strong {
+        font-size: 1.1rem;
+    }
+
+    .vehicle-details span {
+        font-size: .48rem;
+        letter-spacing: .06em;
+    }
+
+    #img {
+        border-width: 4px;
+    }
+
+    footer {
+        font-size: .57rem;
+    }
 }
